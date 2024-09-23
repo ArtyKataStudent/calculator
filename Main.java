@@ -60,6 +60,34 @@ class Main {
             if (number < 1) {
                 throw new IllegalArgumentException("Результат для римских цифр должен быть положительным");
             }
+            while (number >= 900) {
+                result.append("CM");
+                number -= 900;
+            }
+            while (number >= 500) {
+                result.append("D");
+                number -= 500;
+            }
+            while (number >= 400) {
+                result.append("CD");
+                number -= 400;
+            }
+            while (number >= 100) {
+                result.append("C");
+                number -= 100;
+            }
+            while (number >= 90) {
+                result.append("XC");
+                number -= 90;
+            }
+            while (number >= 50) {
+                result.append("L");
+                number -= 50;
+            }
+            while (number >= 40) {
+                result.append("XL");
+                number -= 40;
+            }
             while (number >= 10) {
                 result.append("X");
                 number -= 10;
@@ -67,18 +95,6 @@ class Main {
             while (number >= 9) {
                 result.append("IX");
                 number -= 9;
-            }
-            while (number >= 8) {
-                result.append("VIII");
-                number -= 8;
-            }
-            while (number >= 7) {
-                result.append("VII");
-                number -= 7;
-            }
-            while (number >= 6) {
-                result.append("VI");
-                number -= 6;
             }
             while (number >= 5) {
                 result.append("V");
@@ -88,19 +104,11 @@ class Main {
                 result.append("IV");
                 number -= 4;
             }
-            while (number >= 3) {
-                result.append("III");
-                number -= 3;
-            }
-            while (number >= 2) {
-                result.append("II");
-                number -= 2;
-            }
             while (number >= 1) {
                 result.append("I");
                 number -= 1;
+                return result.toString();
             }
-            return result.toString();
         }
 
         int romanToArabic(String roman) {
